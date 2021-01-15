@@ -1,1 +1,2 @@
 # Rover
+This was a project for Athabasca University's COMP444 Embedded Computing. The app runs on a RobotShop Rover, which has an Arduino microcontroller. I also mounted a GPS shield, bluetooth radio and an ultrasonic sensor on the Rover. The point was for the Rover to be programmed with destination coordinates and navigate to them, while updating its location wirelessly on the way.
