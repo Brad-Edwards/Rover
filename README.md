@@ -1,2 +1,16 @@
 # Rover
+
+Purpose:
+
 This was a project for Athabasca University's COMP444 Embedded Computing. The app runs on a RobotShop Rover, which has an Arduino microcontroller. I also mounted a GPS shield, bluetooth radio and an ultrasonic sensor on the Rover. The point was for the Rover to be programmed with destination coordinates and navigate to them, while updating its location wirelessly on the way.
+
+Observations:
+
+1. Robotics is ***fun***. A lot of fun. Some of the most fun I have had coding. 
+2. The physical world does not care whether I think my code adequately accounts for the physical world.
+3. Robotics is hard. But really, really fun.
+4. Different concerns come into play when you are testing robots instead of just code. Concerns such as random people who decide to ride their horses through your yard (who does this?!) and nearly crush your robot. Nobody rides horses across my desk when I am coding inside.
+5. Real-time coding is a different beast. There were trade offs to be made between frequency of reading GPS signals and being able to react to the ultrasonic sensors, controlling the motors or communicating. This was a real eye-opener for me because I have not had experience with this kind of programming. It made me think about the challenges faced dealing with robotics, industrial systems and other real-time applications that are just an issue with other types of application. This is an area of theory and practice I am going to put on my long list of topics to research.
+6. Hardware introduces failure modes that look like software failures. I had a problem where the rover was communicating intermittently and seemed to be receiving only partial GPS data from the GPS shield. I combed through my code, found a bunch of unrelated errors, and got pretty frustrated. It took longer than I care to admit before I stopped to wonder if it was a hardware issue. I checked all the wiring and that I had my pins right. The ultimate cause? The batteries were getting low. That was it. Low power was making the Arduino act flaky. It was not a software issue at all.
+7. Embedded computing has space and processing constraints that are very salient. I ***knew*** this intellectually, but it is something else to experience running into the limits of processing power, storage and the like. For so many small applications, desktop and laptop computers are effectively infinitely powerful. This is definitely not the case with a little Arduino.
+8. Compensating for sensor jitter is a whole world unto itself that I would need to spend a lot of time researching to improve in. The GPS I was using is cheap. The Rover moves very slowly with respect to the GPS' accuracy. And the Rover goes off course on uneven terrain very quickly with respect to the GPS' accuracy. So between the jitter of the GPS and the fact the Rover had a hard time driving in a straight line, I had to put the Rover a very long way from its target so that on average it would head in the right direction. My reward for making the Rover successfully navigate across my paved yard to a beer I put on the ground was that I would get to drink the beer. I am happy to report the Rover mostly went in the direction of the beer. Mostly. Enough so that I drank the beer anyway.
